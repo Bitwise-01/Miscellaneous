@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 #
 # 1,2,3,5,8,...
-#
 
 def fib(a=0,b=1):
  for i in range(10):
