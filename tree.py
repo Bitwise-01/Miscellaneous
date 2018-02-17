@@ -1,8 +1,7 @@
-# Python: 2.7
+# Python: 2.7 & 3.6
 # Tree sort algorithm
 
 from time import time
-from random import randint 
 
 class Node(object):
  def __init__(self, node):
@@ -13,8 +12,9 @@ class Node(object):
   
  def add(self, newNode, node=None):
   if not node:
+   number = self.number if not isinstance(self.number, Node) else self.number.number
+
    # prevent repeats
-   number = self.number if type(self.number) == int else self.number.number
    if newNode.number == number: # get number from node object
     return
 
@@ -71,7 +71,7 @@ class Node(object):
 class TreeSort(object):
  def __init__(self, nlist): 
   self.numbers = [Node(_) for _ in nlist]
-  self.root = self.numbers[len(self.numbers)/2]
+  self.root = self.numbers[int(len(self.numbers)/2)]
 
  def sort(self):
   started = time()
@@ -88,7 +88,9 @@ class TreeSort(object):
 
 
 if __name__ == '__main__':
- nlist = [randint(0, 10) for _ in range(10)]
+ nlist = [['a', 'b', 'd', 'c'], [1, 3, 5, 2, 4]]
+ 
+ for _ in nlist:
+  n = TreeSort(_).sort()
+  print ('\n\nInput: {}\nOutput: {}\nTime: {}'.format(_, n[0], n[1]))
 
- n = TreeSort(nlist).sort()
- print 'Input: {}\nOutput: {}\nTime: {}'.format(nlist, n[0], n[1])
