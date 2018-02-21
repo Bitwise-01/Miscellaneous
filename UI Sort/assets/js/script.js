@@ -129,7 +129,7 @@ class Tree {
 
 	toList(string) {
 		var nlist = [];
-		var list = string.split(' ');
+		var list = string.split(',');
 		
 		for(var n=0; n<list.length; n++) {
 			if(list[n].trim()) {
