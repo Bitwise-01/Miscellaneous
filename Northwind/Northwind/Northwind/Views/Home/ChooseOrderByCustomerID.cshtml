@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Order by customerID";
+}
+
+<h3>Chosen CustomerID: @ViewBag.ChosenCustID</h3>
+
+
+<table border="1">
+    @{
+        <thead>
+            <tr>
+                <th style="text-align: center;">Order ID</th>
+                <th style="text-align: center;">Customer ID</th>
+                <th style="text-align: center;">Employee ID</th>
+                <th style="text-align: center;">Order Date</th>
+                <th style="text-align: center;">Required Date</th>
+                <th style="text-align: center;">Shipped Date</th>
+                <th style="text-align: center;">Ship Via</th>
+                <th style="text-align: center;">Freight</th>
+                <th style="text-align: center;">Ship Name</th>
+                <th style="text-align: center;">Ship Address</th>
+                <th style="text-align: center;">Ship City</th>
+                <th style="text-align: center;">Ship Region</th>
+                <th style="text-align: center;">Ship Postal Code</th>
+                <th style="text-align: center;">Ship Country</th>
+            </tr>
+        </thead>
+
+        foreach (var p in ViewBag.aListOfOrdersByCustomerID) /* search through the orders table */
+        {
+        <tr style="text-align: center;">
+            <td> @p.OrderID </td>
+            <td> @p.CustomerID </td>
+            <td> @p.EmployeeID </td>
+            <td> @p.OrderDate </td>
+            <td> @p.RequiredDate </td>
+            <td> @p.ShippedDate </td>
+            <td> @p.ShipVia </td>
+            <td> @p.Freight </td>
+            <td> @p.ShipName </td>
+            <td> @p.ShipAddress </td>
+            <td> @p.ShipCity </td>
+            <td> @p.ShipRegion </td>
+            <td> @p.ShipPostalCode </td>
+            <td> @p.ShipCountry </td>
+        </tr>
+        }
+    }
+</table>
+
+

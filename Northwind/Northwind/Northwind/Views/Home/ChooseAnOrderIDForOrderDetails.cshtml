@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Choosen Order ID For Order Details";
+}
+
+<h3>Choosen OrderID: @ViewBag.ChosenOrdID</h3>
+
+<table border="1">
+    @{
+        <thead>
+            <tr>
+                <th style="text-align: center;">Order ID</th>
+                <th style="text-align: center;">Product ID</th>
+                <th style="text-align: center;">Unit Price</th>
+                <th style="text-align: center;">Quantity</th>
+                <th style="text-align: center;">Discount</th>
+            </tr>
+        </thead>
+
+        foreach (var p in ViewBag.aListOfOrdersByOrderID) /* search through the order details table */
+        {
+            <tr style="text-align: center;">
+                <td> @p.OrderID </td>
+                <td> @p.ProductID </td>
+                <td> $@p.UnitPrice </td>
+                <td> @p.Quantity </td>
+                <td> $@p.Discount </td>
+            </tr>
+        }
+    }
+</table>

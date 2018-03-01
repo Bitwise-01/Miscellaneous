@@ -1,0 +1,142 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    body {
+        background-color: #e1dfdf;
+    }
+</style>
+
+<!-- Author & Intro -->
+<h2><span style="color:aqua;">Author</span><b>:</b> <i><span>Mohamed Sheikh</span><b>(<em>PureL0G1C</em>)</b></i></h2>
+<br />
+
+<!-- Insert into the database using a form-->
+<h3> Insert into database </h3>
+<form method="get" action="InsertCategory">
+    <input name="categoryName" type="text" spellcheck="false" placeholder="Category name" required /><br />
+    <input name="description" type="text" spellcheck="false" placeholder="Description" required /><br />
+    <button type="submit" style="font-size: 18px; padding: 5px 55px; background-color: #06a104; margin-top: 5px; border-radius: 5px;">Insert</button>
+</form>
+<br />
+
+<!-- Order From EmployeeID -->
+<!--<h3> Choose an employee's ID for an order</h3>-->
+<h3>Employees &#8594 Orders</h3>
+<form method="get" action="ChooseOrderByEmployeeID">
+
+    <select name="EmplID">
+
+        @foreach (var c in ViewBag.ListOfEmployees)
+        {
+            <option value="@c.EmployeeID"> @c.Firstname </option>
+        }
+
+    </select>
+    <input type="submit" />
+</form>
+<br />
+
+<!-- Category -->
+<!--<h3> Choose a category for a product</h3>-->
+<h3>Categories &#8594 Products</h3>
+<form method="get" action="ChooseCategory">
+
+    <select name="CatID">
+
+        @foreach (var c in ViewBag.ListOfCategories)
+        {
+            <option value="@c.CategoryID"> @c.CategoryName </option>
+        }
+
+    </select>
+
+    <input type="submit" />
+</form>
+<br />
+
+<!-- Order From ShipperID -->
+<!--<h3> Choose an shipper's ID for an order</h3>-->
+<h3>Shippers &#8594 Orders</h3>
+<form method="get" action="ChooseOrderByShipperID">
+
+    <select name="ShipID">
+
+        @foreach (var c in ViewBag.ListOfShippers)
+        {
+            <option value="@c.ShipperID"> @c.CompanyName </option>
+        }
+
+    </select>
+    <input type="submit" />
+</form>
+<br />
+
+<!-- Order Details From ProductID -->
+<!--<h3> Choose a Product for Order details</h3>-->
+<h3>Products &#8594 OrderDetails</h3>
+<form method="get" action="ChooseAProductForOrderDetails">
+
+    <select name="ProdID">
+
+        @foreach (var c in ViewBag.ListOfProducts)
+        {
+            <option value="@c.ProductID"> @c.ProductName </option>
+        }
+
+    </select>
+    <input type="submit" />
+</form>
+<br />
+
+<!-- Order Details From OrderID -->
+<!--<h3> Choose a ship name for order details</h3>-->
+<h3>Orders &#8594 OrderDetails</h3>
+<form method="get" action="ChooseAnOrderIDForOrderDetails">
+
+    <select name="OrdID">
+
+        @foreach (var c in ViewBag.ListOfOrders)
+        {
+            <option value="@c.OrderID"> @c.ShipName </option>
+        }
+
+    </select>
+    <input type="submit" />
+</form>
+<br />
+
+<!-- Order From CustomerID -->
+<!--<h3> Choose a company's name for an order</h3>-->
+<h3>Customer &#8594 Orders</h3>
+<form method="get" action="ChooseOrderByCustomerID">
+
+    <select name="CustID">
+
+        @foreach (var c in ViewBag.ListOfCustomers)
+        {
+            <option value="@c.CustomerID"> @c.CompanyName </option>
+        }
+
+    </select>
+    <input type="submit" />
+</form>
+<br />
+
+<!-- Supplier -->
+<!--<h3> Choose a supplier for products details</h3>-->
+<h3>Suppliers &#8594 Products</h3>
+<form method="get" action="ChooseSupplier">
+
+    <select name="SupID">
+
+        @foreach (var c in ViewBag.ListOfSuppliers)
+        {
+            <option value="@c.SupplierID"> @c.CompanyName </option>
+        }
+
+    </select>
+    <input type="submit" />
+</form>
+<br />

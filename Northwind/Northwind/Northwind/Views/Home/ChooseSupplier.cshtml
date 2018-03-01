@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Products by supplier";
+}
+
+<h3>Chosen SupplierID: @ViewBag.ChosenSupID</h3>
+<table border="1">
+@{ 
+    <thead>
+        <tr>
+            <th style="text-align: center; padding: 0 5px;">Product ID</th>
+            <th style="text-align: center; padding: 0 5px;">Product Name</th>
+            <th style="text-align: center; padding: 0 5px;">Supplier ID</th>
+            <th style="text-align: center; padding: 0 5px;">Category ID</th>
+            <th style="text-align: center; padding: 0 5px;">Quantity Per Unit</th>
+            <th style="text-align: center; padding: 0 5px;">Unit Price</th>
+            <th style="text-align: center; padding: 0 5px;">Units In Stock</th>
+            <th style="text-align: center; padding: 0 5px;">Units On Order</th>
+            <th style="text-align: center; padding: 0 5px;">Reorder Level</th>
+            <th style="text-align: center; padding: 0 5px;">Discontinued</th>
+        </tr>
+    </thead>
+    foreach (var s in ViewBag.ListOfProductsBySupplier)
+    {
+    <tr style="text-align: center;">
+        <td> @s.ProductID </td>
+        <td> @s.ProductName </td>
+        <td> @s.SupplierID </td>
+        <td> @s.CategoryID </td>
+        <td> @s.QuantityPerUnit </td>
+        <td> @s.UnitPrice </td>
+        <td> @s.UnitsInStock </td>
+        <td> @s.UnitsOnOrder </td>
+        <td> @s.ReorderLevel </td>
+        <td> @s.Discontinued </td>
+    </tr>
+    }
+}
+</table>
+

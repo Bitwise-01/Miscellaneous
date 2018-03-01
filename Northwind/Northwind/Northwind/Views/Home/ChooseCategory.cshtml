@@ -1,0 +1,203 @@
+﻿@{
+    ViewBag.Title = "Products by category";
+}
+
+<!-- CSS -->
+<style>
+
+    .clean {
+        color: black;
+        padding: 0 10px;
+        background: white;
+        font-weight: bolder;
+    }
+
+    #price {
+        font-style: italic;
+        padding-right: 10px;
+    }
+
+    #err_code {
+        padding-left: 5px;
+    }
+
+    #err_under {
+        color: black;
+        text-decoration: line-through;
+    }
+
+    .err_style {
+        color: red;
+        font-style: italic;
+    }
+    
+</style>
+
+<!-- JS -->
+<script>
+    var index = 0;
+    var errors = [
+                   { 'err_code': 400, 'err_msg': 'Bad Request', },
+                   { 'err_code': 401, 'err_msg': 'Unauthorized' },
+                   { 'err_code': 403, 'err_msg': 'Forbidden' },
+                   { 'err_code': 404, 'err_msg': 'Not Found' },
+                   { 'err_code': 502, 'err_msg': 'Bad Gateway' }
+    ]
+
+    window.onload = function () {
+        fixCurrency();
+        setupEventListeners();
+    }
+
+    function setupEventListeners() {
+        document.getElementById("err").addEventListener("click", changeError);
+        document.getElementById("err").addEventListener("mouseenter", changeError);
+        document.getElementById("err").addEventListener("mouseleave", changeError);
+        /* document.getElementById("err").addEventListener("mouseover", changeError); */
+    }
+
+    function changeError() {
+        /* set */
+        var item = errors[index];
+        var err_msg = item.err_msg;
+        var err_code = item.err_code;
+
+        /* change */
+        changeIndex()
+        document.getElementById("err_msg").innerHTML = err_msg;
+        document.getElementById("err_code").innerHTML = err_code;
+    }
+
+    function changeIndex() {
+        /* wrap around when max is reached */
+        index = (index == (errors.length - 1)) ? 0 : index+1;              
+    }
+
+    function fixCurrency() {
+        var prices = document.getElementsByClassName("price");
+
+        for (var n = 0; n < prices.length; n++) {
+            document.getElementsByClassName("price")[n].innerHTML = "$" + addComma(prices[n].innerHTML.trim());
+        }        
+    }
+
+    function isDoubled(item) {
+        return (item.toString().split('.').length == 1) ? false : (item.toString().split('.')[1].length >= 2) ? true : false;
+    }
+    
+    function _in(item, pattern) {
+        for (var i = 0; i < item.length; i++) {
+            if (item[i] == pattern) 
+                return true;
+        }
+        return false;
+    }
+
+    function addComma(item) {
+        item = (isDoubled(item)) ? item.toString() : item.toString() + (_in(item.toString(), '.') ? '0' : '.00');
+
+        var group; /* group of number seperated by commas */
+        var rNum = []; /* reversed number is store here */
+        var number = []; /* to stored inveresed reversed numbers */
+        var tmpNum = ''; /* tmp storage for numbers */
+        
+        var item1 = item.split('.')[0]; /* numbers to manipulate */
+        var item2 = item.split('.')[1]; /* the numbers after the decimal point */
+
+        /* reversed & group */
+        for (var n = (item1.length - 1); n >= 0; n--) {
+            if (tmpNum.length == 3) {
+                rNum.push(tmpNum);
+                tmpNum = '';
+            }
+
+            tmpNum += item1[n];
+            if (!n) {
+                rNum.push(tmpNum);
+            }           
+        }
+
+        /* inverse & add commas */
+        for (var n = rNum.length - 1; n >= 0; n--) {
+            
+            group = rNum[n];
+
+            for (var i = group.length; i >= 0; i--) {
+                number.push(group[i]);
+            }
+                       
+            if (n)
+                number.push(',');
+        }
+
+        /* convert to string & add decimals */
+        number = number.join('', '') + '.' + item2;
+        return number;               
+    }
+    
+</script>
+
+<br/><br/>
+<!--
+<p id="err" style="font-size: 5.3em;"><span style="font-weight: bolder;">Error</span><span id="err_code" class="err_style">403</span><b style="padding-right:0.3em;">:</b><span id="err_under"><span id="err_msg" class="err_style">Forbidden</span></span></p>
+-->
+
+
+<h3> Chosen CategoryID: @ViewBag.ChosenCatID </h3>
+
+
+<table border="1">
+    @{
+        /*
+        <thead>
+            <tr>
+                <th style="text-align: center;">Product ID</th>
+                <th style="text-align: center;">Product Name</th>
+                <th style="text-align: center;">Category ID</th>
+                <th style="text-align: center;">Unit Price</th>
+            </tr>
+        </thead>
+
+        foreach (var p in ViewBag.ListOfProductsByCategory)
+        {
+            <tr>
+                <td class="clean"> @p.ProductID </td>
+                <td class="prod_name"> @p.ProductName </td>
+                <td class="clean" style="text-align: center;"> @p.CategoryID </td>
+                <td class="clean price" id="price"> @p.UnitPrice </td>
+            </tr>
+        }
+        */
+
+
+        <thead>
+            <tr>
+                <th style="text-align: center; padding: 0 5px;">Product ID</th>
+                <th style="text-align: center; padding: 0 5px;">Product Name</th>
+                <th style="text-align: center; padding: 0 5px;">Supplier ID</th>
+                <th style="text-align: center; padding: 0 5px;">Category ID</th>
+                <th style="text-align: center; padding: 0 5px;">Quantity Per Unit</th>
+                <th style="text-align: center; padding: 0 5px;">Unit Price</th>
+                <th style="text-align: center; padding: 0 5px;">Units In Stock</th>
+                <th style="text-align: center; padding: 0 5px;">Units On Order</th>
+                <th style="text-align: center; padding: 0 5px;">Reorder Level</th>
+                <th style="text-align: center; padding: 0 5px;">Discontinued</th>
+            </tr>
+        </thead>
+        foreach (var s in ViewBag.ListOfProductsByCategory)
+        {
+            <tr style="text-align: center;">
+                <td> @s.ProductID </td>
+                <td> @s.ProductName </td>
+                <td> @s.SupplierID </td>
+                <td> @s.CategoryID </td>
+                <td> @s.QuantityPerUnit </td>
+                <td> @s.UnitPrice </td>
+                <td> @s.UnitsInStock </td>
+                <td> @s.UnitsOnOrder </td>
+                <td> @s.ReorderLevel </td>
+                <td> @s.Discontinued </td>
+            </tr>
+        }
+    }
+</table>

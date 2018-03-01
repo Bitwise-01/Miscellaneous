@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Order by employee";
+}
+
+<h3>Chosen employee ID: @ViewBag.ChosenEmplID</h3>
+
+<table border="1">
+    @{
+        <thead>
+            <tr>
+                <th style="text-align: center; padding: 0 5px;">Order ID</th>
+                <th style="text-align: center; padding: 0 5px;">Customer ID</th>
+                <th style="text-align: center; padding: 0 5px;">Employee ID</th>
+                <th style="text-align: center; padding: 0 5px;">Order Date</th>
+                <th style="text-align: center; padding: 0 5px;">Required Date</th>
+                <th style="text-align: center; padding: 0 5px;">Shipped Date</th>
+                <th style="text-align: center; padding: 0 5px;">Ship Via</th>
+                <th style="text-align: center; padding: 0 5px;">Freight</th>
+                <th style="text-align: center; padding: 0 5px;">Ship Name</th>
+                <th style="text-align: center; padding: 0 5px;">Ship Address</th>
+                <th style="text-align: center; padding: 0 5px;">Ship City</th>
+                <th style="text-align: center; padding: 0 5px;">Ship Region</th>
+                <th style="text-align: center; padding: 0 5px;">Ship Postal Code</th>
+                <th style="text-align: center; padding: 0 5px;">Ship Country</th>
+            </tr>
+        </thead>
+
+        foreach (var p in ViewBag.aListOfOrdersByEmployeeID) /* search through the orders table */
+        {
+            <tr style="text-align: center;">
+                <td> @p.OrderID </td>
+                <td> @p.CustomerID </td>
+                <td> @p.EmployeeID </td>
+                <td> @p.OrderDate </td>
+                <td> @p.RequiredDate </td>
+                <td> @p.ShippedDate </td>
+                <td> @p.ShipVia </td>
+                <td> @p.Freight </td>
+                <td> @p.ShipName </td>
+                <td> @p.ShipAddress </td>
+                <td> @p.ShipCity </td>
+                <td> @p.ShipRegion </td>
+                <td> @p.ShipPostalCode </td>
+                <td> @p.ShipCountry </td>
+            </tr>
+        }
+    }
+</table>
+
