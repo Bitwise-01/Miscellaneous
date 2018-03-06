@@ -15,19 +15,15 @@ namespace InsertionSort
 
         public void Sort()
         {
-            for(int n=0; n<unsorted.Length; n++)
+            for(int i=0; i<unsorted.Length; i++)
             {
-                for(int i=n+1; i<unsorted.Length; i++)
-                {
-                    /* this method will do it everything */
-                    this.Reduce(i); 
-                }
+                this.Reduce(i); 
             }
         }
 
         private void Reduce(int index)
         {
-            /* for each elements that are in a lower index tha the current index swap them */
+        
             for(int index1=index; index1>=0; index1--)
             {
                 for(int index2=index1-1; index2>=0; index2--)
