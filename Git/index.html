@@ -1,0 +1,65 @@
+<!--
+ Date: 03/28/2018
+ Author: Mohamed Sheikh
+ Decription: Website for class
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+      
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">      
+    <title>Git</title>
+
+  </head>
+  <body>
+
+    <nav id="main">
+      <div class="logo"><img id="logo" src="assets/img/logo.png" height="32" width="32"></div>
+      <ul>
+        <li> <a href="index.html">Home</a> </li>
+        <li> <a href="github.html">Github</a></li>
+        <li> <a href="authors.html">Authors</a></li>
+        <li> <a href="compare.html">Comparison</a></li>
+      </ul>
+    </nav>
+      
+   
+    <div class="container">
+        <h2 style="text-align: center; text-decoration: underline;">What is Git?</h2>         
+        <p style="text-indent: 50px;">Git is just one of many version control software out there. Git is a distributed version control system, meaning multiple people can be working on the same code locally without affecting the main project. Git is also designed in a way where someone can work on the code offline. When someone is done editing the code, they can use git to upload the code to a website called <a href="github.html">Github</a>. These are the reasons why Git is a well known version control software because it makes version control easier for software developers.</p>
+
+         <h3>A few Git functions </h3>
+         <ul style="font-family: cursive;">
+            <li><a href="#pull">Pull</a></li>
+            <li><a href="#clone">Clone</a></li>
+            <li><a href="#fetch">Fetch</a></li>
+      </ul>
+    </div>
+      
+    <div id="fetch" class="container">
+        <h2 class="words" style="margin-right: 93%;">Fetch</h2> 
+        <a href="#main">^</a>
+        <h3 class="question">What is it?</h3>
+        <p style="text-indent: 50px;">Fetch downloads new data from a remote projects - example <a href="github.html">Github</a>, but it doesn't add any of fetched data into your local project, the one that you have <a href="#clone">cloned</a>. Fetch is great for getting a view on all the updates that took place in a remote project. Fetch is written in a way where it will never corrupt existing file on your local.</p>
+    </div>
+      
+    <div id="pull" class="container">
+        <h2 class="words" style="margin-right: 94.5%;">Pull</h2> 
+        <a href="#main">^</a>
+        <h3 class="question">What is it?</h3>
+        <p style="text-indent: 50px;">Unlike <a href="#fetch">fetch</a>, pull is used to update your current local project with the latest changes from <a href="github.html">Github</a>. This means that pull not only downloads the latest data from <a href="github.html">Github</a>; it also directly adds it into your current working copy files.</p>
+    </div>
+    
+    <div id="clone" class="container">
+        <h2 class="words" style="margin-right: 92.5%;">Clone</h2>  
+        <a href="#main">^</a>
+        <h3 class="question">What is it?</h3>
+        <p style="text-indent: 50px;">Clone is used to point to an existing project and make a local copy of that project. The original project can be located on the local filesystem or on <a href="github.html">Github</a>. The clone command copies an existing project and reneder it and then update it to the original project.</p>
+    </div>          
+  </body>
+</html>

@@ -1,0 +1,85 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fff;
+}
+
+nav {
+    width: 100%;
+    font-size: 1.5em;
+    padding: 1px 5px; 
+    font-style: italic;
+    margin-bottom: 45px;
+    background-color: rgb(255, 125, 0);
+}
+
+nav ul {
+    text-align: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    font-size: 0.85em;
+    font-style: italic;
+    padding-right: 5px;
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    color: #fff;
+}
+
+a {
+    color: #070707;
+}
+
+p {
+    font-family: cursive;
+}
+
+.logo {
+    padding: 0;
+    float: left;
+    opacity: 0.8;
+    padding-top: 25px;
+    font-style: italic;
+}
+
+.container {
+    width: 80%;
+    height: 30%;
+    margin: auto;
+    padding: 0 30px;
+    overflow: scroll;
+    border-radius: 5px;
+    margin-bottom: 70px;
+    border: 1px solid #000;
+}
+
+.question {
+    text-align: center;
+}
+
+.words {
+    display: inline; 
+    border-radius: 2px; 
+    border: 1px solid #000; 
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+@media (max-width:265px) {
+    .logo { display: none; }
+    nav ul { text-align: center; padding-right: 1.9em; }
+    nav ul li { width: 100%; padding-bottom: 15px; }
+    .container { width: 100%; }
+}
