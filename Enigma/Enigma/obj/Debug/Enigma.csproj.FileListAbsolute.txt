@@ -1,0 +1,14 @@
+C:\Users\Mohamed\Desktop\Enigma\Enigma\Enigma\bin\Debug\Enigma.exe.config
+C:\Users\Mohamed\Desktop\Enigma\Enigma\Enigma\bin\Debug\Enigma.exe
+C:\Users\Mohamed\Desktop\Enigma\Enigma\Enigma\bin\Debug\Enigma.pdb
+C:\Users\Mohamed\Desktop\Enigma\Enigma\Enigma\obj\Debug\Enigma.csprojResolveAssemblyReference.cache
+C:\Users\Mohamed\Desktop\Enigma\Enigma\Enigma\obj\Debug\Enigma.csproj.CoreCompileInputs.cache
+C:\Users\Mohamed\Desktop\Enigma\Enigma\Enigma\obj\Debug\Enigma.exe
+C:\Users\Mohamed\Desktop\Enigma\Enigma\Enigma\obj\Debug\Enigma.pdb
+C:\Users\Mohamed\Desktop\Enigma\Enigma\bin\Debug\Enigma.exe.config
+C:\Users\Mohamed\Desktop\Enigma\Enigma\bin\Debug\Enigma.exe
+C:\Users\Mohamed\Desktop\Enigma\Enigma\bin\Debug\Enigma.pdb
+C:\Users\Mohamed\Desktop\Enigma\Enigma\obj\Debug\Enigma.csprojResolveAssemblyReference.cache
+C:\Users\Mohamed\Desktop\Enigma\Enigma\obj\Debug\Enigma.csproj.CoreCompileInputs.cache
+C:\Users\Mohamed\Desktop\Enigma\Enigma\obj\Debug\Enigma.exe
+C:\Users\Mohamed\Desktop\Enigma\Enigma\obj\Debug\Enigma.pdb
