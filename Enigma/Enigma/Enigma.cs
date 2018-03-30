@@ -22,7 +22,7 @@ namespace Enigma
         private const double E = 2.71828;
         private const double PI = 3.1416f;
         static private double BaseNumber = Math.Pow(MAX_BIT, MIN_BIT);
-        private const string CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+        private const string CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ ";
                
         static private void SetInitialKey(double _key, double _incr)
         {
