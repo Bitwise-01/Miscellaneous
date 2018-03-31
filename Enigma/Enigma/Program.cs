@@ -20,10 +20,10 @@ namespace Enigma
                     string msg = Console.ReadLine();
 
                     Console.Write("[-] Enter a secure key: ");
-                    double key = Convert.ToDouble(Console.ReadLine());
+                    double key = GetKey(Console.ReadLine());                   
 
                     Console.Write("[-] Enter a secure pin: ");
-                    double incr = Convert.ToDouble(Console.ReadLine());
+                    double incr = GetKey(Console.ReadLine());
 
                     Console.Write("\n\n(E)ncrypt\n(D)ecrypt\n[-] Enter an option: ");
                     string option = Console.ReadLine();
@@ -38,6 +38,21 @@ namespace Enigma
                 } 
                 catch { continue; }
             }
-        }      
+        }  
+
+        static private double GetKey(string input)
+        {
+            int key = 0;
+            
+            foreach(var item in input)
+                key += GetIndex(item);
+
+            return Convert.ToDouble(key);
+        } 
+       
+        static private int GetIndex(char item)
+        {
+            return Enigma.CHARS.IndexOf(item);             
+        }                
     }
 }
