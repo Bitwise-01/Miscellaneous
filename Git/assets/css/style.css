@@ -44,6 +44,14 @@ p {
     font-family: cursive;
 }
 
+iframe {
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-bottom: 85px;
+    border: 1px solid #000;
+}
+
 .logo {
     padding: 0;
     float: left;
@@ -77,9 +85,10 @@ p {
     display: none; 
 }
 
-@media (max-width:265px) {
+@media (max-width:630px) {
     .logo { display: none; }
     nav ul { text-align: center; padding-right: 1.9em; }
     nav ul li { width: 100%; padding-bottom: 15px; }
     .container { width: 100%; }
+    .arrow { display: none; }
 }
