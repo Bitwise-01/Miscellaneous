@@ -1,0 +1,7 @@
+C:\Users\Mohamed\Desktop\C#\SalesManPrb\SalesManPrb\bin\Debug\SalesManPrb.exe.config
+C:\Users\Mohamed\Desktop\C#\SalesManPrb\SalesManPrb\bin\Debug\SalesManPrb.exe
+C:\Users\Mohamed\Desktop\C#\SalesManPrb\SalesManPrb\bin\Debug\SalesManPrb.pdb
+C:\Users\Mohamed\Desktop\C#\SalesManPrb\SalesManPrb\obj\Debug\SalesManPrb.csprojResolveAssemblyReference.cache
+C:\Users\Mohamed\Desktop\C#\SalesManPrb\SalesManPrb\obj\Debug\SalesManPrb.csproj.CoreCompileInputs.cache
+C:\Users\Mohamed\Desktop\C#\SalesManPrb\SalesManPrb\obj\Debug\SalesManPrb.exe
+C:\Users\Mohamed\Desktop\C#\SalesManPrb\SalesManPrb\obj\Debug\SalesManPrb.pdb
