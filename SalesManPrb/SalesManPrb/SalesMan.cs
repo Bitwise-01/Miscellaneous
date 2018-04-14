@@ -72,7 +72,7 @@ namespace SalesManPrb
 
             if (isLastLocation)
             {
-                int indexOfHere = aListOfLocations.FindIndex(l => l.Distance == here.Distance);
+                int indexOfHere = aListOfLocations.FindIndex(l => l.Name == here.Name);
                 aListOfLocations.RemoveAt(indexOfHere);
             }
             return lastLocation;
