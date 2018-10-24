@@ -268,7 +268,7 @@ void modifyCells(int grid[MAX_SIZE][MAX_SIZE], unsigned int max_size) {
 				}
 			}
 			
-			currentState = grid[x][y];
+			currentState = newGrid[x][y];
 			if (newState(neighbors, currentState)) { // call the the function newState and if it returns True then set this current cell to alive state
 				if (currentState == DEAD) { // only do this when the current cell is dead, we don't want to waste time
 					setCell(grid, x, y);
